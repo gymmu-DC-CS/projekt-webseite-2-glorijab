@@ -10,5 +10,8 @@ Quellen:
 -Infos Steckbrief: https://en.wikipedia.org/wiki/Stephen_Curry
 -Ideen gesucht für Interaktivität mit JavaScript: ChatGPT (Prompt: gib mir eine Idee für eine Website über einen Baskteballspieler wo ich einen JavaScript Code brauchen kann)
 -Lernen wie man eine Slideshow programmiert: ChatGPT (Prompt: Wie kann man eine slideshow mit Bildern machen?)
+-Lernen wie man Navigationsleiste oben (Menü) programmiert: ChatGPT (Prompt: Wie macht man eine navigatiosleiste)
 
+Lerntagebuch: 
+Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt. (13.3.26)
 
