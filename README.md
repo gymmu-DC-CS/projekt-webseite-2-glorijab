@@ -13,5 +13,5 @@ Quellen:
 -Lernen wie man Navigationsleiste oben (Menü) programmiert: ChatGPT (Prompt: Wie macht man eine navigatiosleiste)
 
 Lerntagebuch: 
-Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt. (13.3.26)
+Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die id's geändert und habe es zu einer geordneten Liste gemacht und habe die Titel bearbeitet (13.3.26)
 
