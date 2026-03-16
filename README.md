@@ -15,7 +15,9 @@ Quellen:
 
 Lerntagebuch: 
 1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die id's geändert und habe es zu einer geordneten Liste gemacht und habe die Titel bearbeitet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. (Noch CSS Code checken)
-2. Ich habe gelernt wie man Bilder neben dem Text einfügt. <float> verschiebt das Bild auf die gewünschte Seite, <width> verändert die Grösse des Bildes und <margin-right> ändert den Abstand des Bildes zum Text. Man muss darauf achten, dass man bei <width> und <margin-right> ,,px'' als Grösse verwendet damit der Code funktioniert. 
+2. Ich habe gelernt wie man Bilder neben dem Text einfügt. <float> verschiebt das Bild auf die gewünschte Seite, <width> verändert die Grösse des Bildes und <margin-right> ändert den Abstand des Bildes zum Text. Man muss darauf achten, dass man bei <width> und <margin-right> ,,px'' als Grösse verwendet damit der Code funktioniert. <style="float: left; width: 200px; margin-right: 10px"> muss man auch bei der Liste einfügen und nicht nur beim Bild, weil es dem Programm so die Anweisung gibt das Bild neben den Text zu stellen und nicht das Bild einfach nur in die rechte Ecke zu stellen. Ausserdem habe ich gelernt, dass ich mit <div style="clear: both;"></div> verhindern kann dass der weitere Text unter dem Bild weiterläuft. (noch gucken wie der Text sich nd so komisch abschneidet)
+
+
 
 
 
