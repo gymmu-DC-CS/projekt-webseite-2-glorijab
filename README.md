@@ -15,8 +15,19 @@ Quellen:
 
 Lerntagebuch: 
 1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die id's geändert und habe es zu einer geordneten Liste gemacht und habe die Titel bearbeitet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. (Noch CSS Code checken)
-2. Ich habe gelernt wie man Bilder neben dem Text einfügt. <float> verschiebt das Bild auf die gewünschte Seite, <width> verändert die Grösse des Bildes und <margin-right> ändert den Abstand des Bildes zum Text. Man muss darauf achten, dass man bei <width> und <margin-right> ,,px'' als Grösse verwendet damit der Code funktioniert. <style="float: left; width: 200px; margin-right: 10px"> muss man auch bei der Liste einfügen und nicht nur beim Bild, weil es dem Programm so die Anweisung gibt das Bild neben den Text zu stellen und nicht das Bild einfach nur in die rechte Ecke zu stellen. Ausserdem habe ich gelernt, dass ich mit <div style="clear: both;"></div> verhindern kann dass der weitere Text unter dem Bild weiterläuft. (noch gucken wie der Text sich nd so komisch abschneidet)
+2. Ich habe gelernt wie man Bilder neben dem Text einfügt. Man benutzt im HTML <div class="container">, die Liste und das Bild um das Bild neben der Liste zu platzieren. Damit der untere Text sich nicht nach oben verschiebt und das Bild mittig ist, sollte man <float> vermeiden. im CSS benutzt man:
+ .container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
 
+.container img {
+  max-width: 400px;
+  height: auto;
+}
+
+Der container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> betsimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
 
 
 
