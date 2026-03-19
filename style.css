@@ -31,3 +31,13 @@ nav {
   top: 0;
 }
 
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.container img {
+  max-width: 200px;
+  height: auto;
+}
