@@ -73,12 +73,21 @@ nav {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.6s ease;
+  z-index: 1;
+}
+
+.nav {
+  z-index: 10; 
+}
+
+.dots {
+  z-index: 10; 
+
 }
 
 .slide.active {
   opacity: 1;
 }
-
 
 .nav {
   position: absolute;
