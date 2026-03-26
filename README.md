@@ -3,7 +3,7 @@ Planung Website
 Ziel: Website über berühmten Basketballspieler Stephen Curry
 Ich möchte Infos über seine Kindheit und Jugend, seine NBA Karriere, seine Rekorde, die Höhepunkte seiner Karriere, seine momentane Leistungen und meine persönlichen Erfahrungen und Bezüge in die Website miteinbeziehen. 
 
-Dabei möchte ich in jedem Abschnitt (ausser dem Abschnitt über meine persönliche Erfahrungen) ein Bild einfügen und JavaScript benutzen, um die momentanen Leistungen interaktiv zu machen (wenn man darauf klickt sieht man die jeweilige Statistik). Dabei bringe ich mir selbst bei wie Buttons und JavaScript Programmierung funktionieren. Ich möchte auch lernen, wie man eine Slideshow von Bildern macht und die beim Abschnitt ,,Höhepunkt Karriere'' einfügen. Ich möchte ausserdem eine Navigationsleiste am Anfang machen, bei der man beim Inhaltsverzeichnis auf die Themen klicken kann und dann direkt zu dem jeweiligen Abschnitt geleitet wird. 
+Dabei möchte ich in jedem Abschnitt (ausser dem Abschnitt über meine persönliche Erfahrungen) ein Bild einfügen und JavaScript benutzen, um die momentanen Leistungen interaktiv zu machen (wenn man darauf klickt sieht man die jeweilige Statistik). Dabei bringe ich mir selbst bei wie Buttons und JavaScript Programmierung funktionieren. Ich möchte auch lernen, wie man eine Slideshow von Bildern macht und die beim Abschnitt ,,Höhepunkt Karriere'' einfügen. Ich möchte ausserdem eine Navigationsleiste am Anfang machen, bei der man beim Inhaltsverzeichnis auf die Themen klicken kann und dann direkt zu dem jeweiligen Abschnitt geleitet wird (ähnlich wie ein Menü oben). 
 
 
 Quellen: 
@@ -27,7 +27,7 @@ Lerntagebuch:
   height: auto;
 }
 
-Der container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> betsimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
+Der Container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> betsimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
 
 
 
