@@ -31,6 +31,11 @@ nav {
   top: 0;
 }
 
+
+
+
+
+
 .container {
   display: flex;
   gap: 20px;
@@ -40,4 +45,75 @@ nav {
 .container img {
   max-width: 400px;
   height: auto;
+}
+
+
+
+
+
+.carousel {
+  position: relative;
+  max-width: 800px;
+  height: 450px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: white;
 }
