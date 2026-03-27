@@ -12,7 +12,8 @@ let interval;
 
 
 slides.forEach((_, i) => {
-  const dot = document.createElement("span");
+  const dot = document.createElement("button");
+  dot.setAttribute("aria-label", + (i + 1));
   dot.classList.add("dot");
   if (i === 0) dot.classList.add("active");
   dot.addEventListener("click", () => {
@@ -62,7 +63,20 @@ function resetAutoplay() {
 
 startAutoplay();
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    index = (index + 1) % slides.length;
+    updateSlides();
+    resetAutoplay();
+  }
 
+  if (e.key === "ArrowLeft") {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlides();
+    resetAutoplay();
+  }
+});
 
+nextBtn.focus();
 
 });

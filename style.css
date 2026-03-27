@@ -124,3 +124,8 @@ nav {
 .dot.active {
   background: white;
 }
+
+.nav:focus,
+.dot:focus {
+  outline: 2px solid white;
+}

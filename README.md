@@ -30,9 +30,20 @@ Lerntagebuch:
   height: auto;
 }
 
-Der Container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> betsimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
+Der Container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> bestimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
 
-3. ich habe gelernt wie man eine slideshow in javascript, css und html programmiert. (nächstes mal problem mit index herausfinden, bzw wieso man nd klicken kann, problem bei css)
+3. Ich habe gelernt wie man eine Slideshow in Javascript, CSS und HTML programmiert.Ich hatte lange Probleme damit, weil ich zuerst einen Code programmmiert habe, der auf Mausklick reagiert (z.B mit nextBtn.addEventListener("click")), also hat es lange Zeit nicht funktioniert, weil ich keine Maus hatte. Um das Problem zu lösen, habe ich mit "keydown" eine Tastatursteuerung eingebaut: 
+
+document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") { index = (index + 1) % slides.length; updateSlides(); } if (e.key === "ArrowLeft") { index = (index - 1 + slides.length) % slides.length; updateSlides(); } });
+
+
+
+ Ausserdem hatte ich am Anfang die Navigationspunkte in meinem HTML Code mit "span" erstellt z.B (const dot = document.createElement("span");). Das war ein Problem, weil "span" kein interaktives Element ist und nicht auf Tastatur reagiert. Also habe ich "span" durch "button" ersetzt: 
+ const dot = document.createElement("button");
+ Damit es funktioniert, habe ich zusätzlich noch eine Beschreibung hinzugefügt: 
+ dot.setAttribute("aria-label", + (i + 1));
+
+ Ein weiteres Problem war, dass ich <script src="script.js" defer></script> gar nicht in meinen HTML hatte, weswegen mein JS Code gar nicht reagiert hat. 
 
 
 
