@@ -49,4 +49,18 @@ document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") { inde
 
  Ein weiteres Problem war, dass ich <script src="script.js" defer></script> gar nicht in meinen HTML hatte, weswegen mein JS Code gar nicht reagiert hat. 
 
+ 4. Ich habe mit ChatGPT gelernt, wei ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
+
+
+ Layout und Steckbrief optimiert
+
+- Flexbox für den Steckbrief-Container eingefügt, um Bild und Liste nebeneinander anzuordnen
+- Container-Styles angepasst: width auf 100%, max-width und margin:auto entfernt, flex-wrap hinzugefügt
+- Bildgrößen angepasst (max-width + flex-shrink) für bessere Darstellung
+- Listeneinträge umbrechbar gemacht (word-break), um Überlauf zu verhindern
+- Media Queries hinzugefügt, damit Steckbrief auf kleinen Bildschirmen untereinander angezeigt wird
+- Navigation angepasst (flex-wrap) für responsive Menü-Darstellung
+- Alle <br> aus der Liste entfernt, um Layoutprobleme und leeren Raum rechts zu beseitigen
+- Overflow-x: hidden auf Body gesetzt, um horizontalen Scroll zu verhindern
+
  

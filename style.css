@@ -1,25 +1,41 @@
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-size: 18px; 
+}
+
+
+
 nav {
   background-color: #222;
   padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav ol {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  gap: 15px
 }
 
-nav li {
-  margin: 0 15px;
-}
 
 nav a {
   color: rgb(253, 251, 251);
   text-decoration: none;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -32,20 +48,33 @@ nav {
 }
 
 
-
-
-
+/* STECKBRIEF CONTAINER */
+#steckbrief {
+  margin: 20px;
+  font-size: 28px;  
+  font-weight: bold;
+}
 
 .container {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.container ul {
+  list-style: none;
 }
 
 .container img {
-  max-width: 400px;
+  max-width: 500px;
+  width: 100%;
   height: auto;
+  flex-shrink: 0;      
 }
+
+
 
 
 
@@ -53,9 +82,9 @@ nav {
 
 .carousel {
   position: relative;
-  max-width: 650px;
+  max-width: 650px;   /* ❗ wieder begrenzen */
   height: 450px;
-  margin: 20px 0;
+  margin: auto;     /* ❗ NICHT auto */
   overflow: hidden;
   border-radius: 12px;
 }
@@ -128,4 +157,21 @@ nav {
 .nav:focus,
 .dot:focus {
   outline: 2px solid white;
+}
+
+
+
+@media (max-width: 768px) {
+  nav ol {
+    justify-content: flex-start;
+  }
+
+  .container {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .container img {
+    max-width: 100%;
+  }
 }
