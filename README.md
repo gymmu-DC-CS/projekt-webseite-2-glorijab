@@ -51,7 +51,7 @@ document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") { inde
 
  4. Ich habe mit ChatGPT gelernt, wei ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
 
-
+noch committen: 
  Layout und Steckbrief optimiert
 
 - Flexbox für den Steckbrief-Container eingefügt, um Bild und Liste nebeneinander anzuordnen
