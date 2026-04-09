@@ -49,9 +49,15 @@ document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") { inde
 
  Ein weiteres Problem war, dass ich <script src="script.js" defer></script> gar nicht in meinen HTML hatte, weswegen mein JS Code gar nicht reagiert hat. 
 
- 4. Ich habe mit ChatGPT gelernt, wei ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
+ 4. Ich habe mit ChatGPT gelernt, wie ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
 
-noch committen: 
+ 5. Ich habe mit ChatGPT gelernt, dass ich media queries hinzufügen muss, um die Elemente der Webseite bei kleineren Bildschirmen (zb Smartphones) untereinander erscheinen zu lassen. 
+
+ 6. Ich habe mit ChatGPT gelernt, dass ich die Navigation (das Menü oben) mit flex-warp anpassen muss, damit es bei kleineren Bildschirmen untereinander angezeigt wird.
+
+ 7.  
+
+Commit: 
  Layout und Steckbrief optimiert
 
 - Flexbox für den Steckbrief-Container eingefügt, um Bild und Liste nebeneinander anzuordnen
@@ -62,5 +68,7 @@ noch committen:
 - Navigation angepasst (flex-wrap) für responsive Menü-Darstellung
 - Alle <br> aus der Liste entfernt, um Layoutprobleme und leeren Raum rechts zu beseitigen
 - Overflow-x: hidden auf Body gesetzt, um horizontalen Scroll zu verhindern
+
+8. 
 
  
