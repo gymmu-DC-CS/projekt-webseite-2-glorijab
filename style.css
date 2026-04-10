@@ -184,23 +184,34 @@ nav {
 
 .timeline {
   position: relative;
-  margin: 80px auto;
+  margin: 120px auto;
   width: 80%;
+  height: 200px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
   height: 4px;
   background: white;
+  transform: translateY(-50%);
 }
+
 
 .event {
   position: absolute;
-  top: -100px;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
 /* Bilder */
 .event img {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 250px;
   border-radius: 50%;
   border: 3px solid orange;
   margin-bottom: 10px;
@@ -210,13 +221,13 @@ nav {
 .event::after {
   content: "";
   position: absolute;
-  top: 95px;
+  top: 50%;
   left: 50%;
   width: 15px;
   height: 15px;
   background: orange;
   border-radius: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 /* Positionen */

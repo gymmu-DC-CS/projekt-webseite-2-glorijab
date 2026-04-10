@@ -55,7 +55,11 @@ document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") { inde
 
  6. Ich habe mit ChatGPT gelernt, dass ich die Navigation (das Menü oben) mit flex-warp anpassen muss, damit es bei kleineren Bildschirmen untereinander angezeigt wird.
 
- 7.  
+ 7.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich .timeline::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+eingefügt habe. (noch verstehen)
 
 Commit: 
  Layout und Steckbrief optimiert
