@@ -10,6 +10,8 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   font-size: 18px; 
+  background: #111;
+  color: white;
 }
 
 
@@ -174,4 +176,58 @@ nav {
   .container img {
     max-width: 100%;
   }
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+  position: relative;
+  margin: 80px auto;
+  width: 80%;
+  height: 4px;
+  background: white;
+}
+
+.event {
+  position: absolute;
+  top: -100px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Bilder */
+.event img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid orange;
+  margin-bottom: 10px;
+}
+
+/* Punkte */
+.event::after {
+  content: "";
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: orange;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+/* Positionen */
+.event:nth-child(1) { left: 10%; }
+.event:nth-child(2) { left: 35%; }
+.event:nth-child(3) { left: 60%; }
+.event:nth-child(4) { left: 85%; }
+
+/* Hover Effekt */
+.event img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  box-shadow: 0 0 20px orange;
 }
