@@ -80,3 +80,29 @@ document.addEventListener("keydown", (e) => {
 nextBtn.focus();
 
 });
+
+
+
+
+
+function animateValue(id, end, duration) {
+  let start = 0;
+  let element = document.getElementById(id);
+  let increment = end / (duration / 16);
+
+  let timer = setInterval(() => {
+    start += increment;
+    if (start >= end) {
+      element.textContent = end;
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(start);
+    }
+  }, 16);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  animateValue("points", 28, 800);
+  animateValue("assists", 6, 800);
+  animateValue("threes", 5, 800);
+});
