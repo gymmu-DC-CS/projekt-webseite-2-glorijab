@@ -73,7 +73,7 @@ Commit:
 - Alle <br> aus der Liste entfernt, um Layoutprobleme und leeren Raum rechts zu beseitigen
 - Overflow-x: hidden auf Body gesetzt, um horizontalen Scroll zu verhindern
 
-8. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. 
+8. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt. 
 
-
+9. Ich habe gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. 
  

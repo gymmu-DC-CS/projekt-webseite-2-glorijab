@@ -317,3 +317,41 @@ nav {
 }
 
 
+
+
+
+/* =========================
+   CARD + TEXT LAYOUT
+========================= */
+
+.stats-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px;
+}
+
+/* Text rechts */
+.stats-text {
+  max-width: 400px;
+  color: #ccc;
+}
+
+.stats-text h3 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.stats-text p {
+  line-height: 1.6;
+}
+
+
+
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
