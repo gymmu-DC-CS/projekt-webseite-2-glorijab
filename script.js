@@ -86,8 +86,10 @@ nextBtn.focus();
 
 
 function animateValue(id, end, duration) {
-  let start = 0;
   let element = document.getElementById(id);
+  if (!element) return; // verhindert Crash
+
+  let start = 0;
   let increment = end / (duration / 16);
 
   let timer = setInterval(() => {
@@ -103,6 +105,4 @@ function animateValue(id, end, duration) {
 
 document.addEventListener("DOMContentLoaded", () => {
   animateValue("points", 28, 800);
-  animateValue("assists", 6, 800);
-  animateValue("threes", 5, 800);
 });
