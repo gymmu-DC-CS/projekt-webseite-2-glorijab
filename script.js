@@ -108,3 +108,20 @@ document.addEventListener("DOMContentLoaded", () => {
   animateValue("assists", 6, 800);
   animateValue("threes", 5, 800);
 });
+
+
+
+
+window.addEventListener("load", () => {
+  const bars = document.querySelectorAll(".records-section .fill");
+
+  bars.forEach(bar => {
+    const value = bar.dataset.value;
+
+    bar.style.width = "0%";
+
+    setTimeout(() => {
+      bar.style.width = value + "%";
+    }, 300);
+  });
+});
