@@ -105,4 +105,6 @@ function animateValue(id, end, duration) {
 
 document.addEventListener("DOMContentLoaded", () => {
   animateValue("points", 28, 800);
+  animateValue("assists", 6, 800);
+  animateValue("threes", 5, 800);
 });
