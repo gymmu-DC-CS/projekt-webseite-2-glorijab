@@ -7,7 +7,7 @@ Ich möchte meine Webseite möglichst vielseitig gestalten und verschiedene Wege
 
 Quellen: 
 -Infos Steckbrief: https://en.wikipedia.org/wiki/Stephen_Curry
--Ideen gesucht für Interaktivität mit JavaScript: ChatGPT (Prompt: gib mir eine Idee für eine Website über einen Baskteballspieler wo ich einen JavaScript Code brauchen kann)
+-Ideen gesucht für Interaktivität mit JavaScript: ChatGPT (Prompt: gib mir eine Idee für eine Website über einen Basketballspieler wo ich einen JavaScript Code brauchen kann)
 -Lernen wie man eine Slideshow programmiert: ChatGPT (Prompt: Wie kann man eine slideshow mit Bildern machen?)
 -Lernen wie man Navigationsleiste oben (Menü) programmiert: ChatGPT (Prompt: Wie macht man eine Navigatiosleiste)?
 -Lernen wie man Bilder verschiebt: ChatGPT (Prompt: Wie verschiebe ich Bilder in HTML neben meinen Text?)
@@ -16,8 +16,34 @@ Quellen:
 
 
 Lerntagebuch: 
-1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die id's geändert und habe es zu einer geordneten Liste gemacht und habe die Titel bearbeitet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. (Noch CSS Code checken)
+1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die Links von den einzelnen Abschnitten hinzugefügt und habe es zu einer geordneten Liste gemacht. <nav> bedeutet Navigation und ist der Bereich, in dem sich die Navigation der Website befindet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. Der CSS Code funktioniert so: 
+-background-color sorgt für den dunklen Hintergrund
+-padding sorgt für den Abstand innen (sodass es nicht gequetscht aussieht) 
+-position: sticky sorgt dafü dass das Menü oben bleibt beim Scrollen -top sorgt dafür dass das Menü ganz oben ist
+-z-index sorgt dafür, dass das Menü über allem anderen sichtbar ist. 
 
+Abschnitt nav ol: 
+-list-style: none; lässt Zahlen (1,2,3) verschwinden
+-display: flex; Elemente werden nebeneinander statt untereinander angeordnet
+-justify-content: center; alles wird in die Mitte geschoben
+-gap: 15px; Abstand zwischen den Menü-Punkten
+
+Abschnitt nav a:
+-color: white; Text weiß
+-text-decoration: none; kein Unterstrich
+-font-weight: bold; fett
+
+Hover Effekt (Nav a :hover):
+ nav a:hover {
+  color: orange;
+} macht dass der Text orange wird wen man mit der Maus drüberfährt
+
+Anordnung Handy
+@media (max-width: 768px) {
+  nav ol {
+    justify-content: flex-start;
+  }
+} macht dass das Menü auf kleinen Bildschirmen nach links geht un dnicht mher zentriert wird
 
 
 2. Ich habe gelernt wie man Bilder neben dem Text einfügt. Man benutzt im HTML <div class="container">, die Liste und das Bild um das Bild neben der Liste zu platzieren. Damit der untere Text sich nicht nach oben verschiebt und das Bild mittig ist, sollte man <float> vermeiden. im CSS benutzt man:
@@ -31,7 +57,7 @@ Lerntagebuch:
   max-width: 400px;
   height: auto;
 }
-Der Container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> bestimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
+Der Container ist ein CSS Selektor und wählt alle Elemente mit class=container aus (siehe HTML). Mit <div> erstellt man einen solchen Container und alle Elemente, die zusammen in einem Container sind, kann man zusammen im CSS gestalten. display:flex; macht das Element zu einem Flexbox-Container, d.h <img> und <ul> werden horizontal nebeneinander angeordnet und nicht untereinander. <gap> bestimmt den Abstand zwischen Bild und Liste und align-items:flex-start; sorgt dafür dass beide Elemente auf der gleichen Höhe beginnen. max-width beim Bild bestimmt die Bildbreite und height:auto sorgt dafür, dass die Länge sich der Breite anpasst (damit das Bild nicht verzerrt aussieht). 
 
 
 
