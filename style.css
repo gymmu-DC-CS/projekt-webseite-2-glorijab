@@ -47,6 +47,9 @@ nav a:hover {
 
 
 
+
+
+
 /* STECKBRIEF CONTAINER */
 #steckbrief {
   margin: 20px;
@@ -81,9 +84,9 @@ nav a:hover {
 
 .carousel {
   position: relative;
-  max-width: 650px;   /* ❗ wieder begrenzen */
+  max-width: 650px;
   height: 450px;
-  margin: auto;     /* ❗ NICHT auto */
+  margin: auto;     
   overflow: hidden;
   border-radius: 12px;
 }
@@ -242,7 +245,7 @@ nav a:hover {
 
 
 /* =========================
-   NBA CARD (FIXED)
+   NBA Karte
 ========================= */
 
 .nba-card {
@@ -318,7 +321,7 @@ nav a:hover {
 
 
 /* =========================
-   CARD + TEXT LAYOUT
+   KARTE + TEXT LAYOUT
 ========================= */
 
 .stats-section {
