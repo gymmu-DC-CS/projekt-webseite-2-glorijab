@@ -363,3 +363,39 @@ nav {
 
 
 
+.records {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.records tbody tr:nth-child(odd) {
+  background: #f6f8fa;
+}
+
+
+.records thead {
+  background: #db6206;
+  color: white;
+}
+
+.records th {
+  padding: 12px;
+  text-align: left;
+}
+
+
+.records td {
+  padding: 12px;
+}
+
+
+.records tbody tr:hover {
+  background: #da8025;
+}
+
