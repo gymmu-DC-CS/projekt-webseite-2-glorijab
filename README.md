@@ -77,5 +77,5 @@ Commit:
 
 9. Ich habe gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. Mein erster Fehler war, dass der Text zu weit rechts platziert wurde und ich einen riesigen Abstand zwischen Karte und Text hatte. Das habe ich gelöst, indem ich den Abschnitt, der die Karte zentriert hat (margin: 40px auto;) zu margin: 0 geändert habe. 
 
-
+10. Fortshcrittsalken, JS hat Fehler noch feritg machen 
  

@@ -112,16 +112,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-window.addEventListener("load", () => {
-  const bars = document.querySelectorAll(".records-section .fill");
-
-  bars.forEach(bar => {
-    const value = bar.dataset.value;
-
-    bar.style.width = "0%";
-
-    setTimeout(() => {
-      bar.style.width = value + "%";
-    }, 300);
-  });
-});
