@@ -116,7 +116,16 @@ einzelne Punkte
 aktiver Punkt
 -background: white; Der Punkt wird hell wenn er aktiv ist und zeigt welches Bild aktiv ist
 
+JavaScript:
+JS macht die Seite interaktiv. Es erkennt Buttons und Dots, wechselt die Bilder und lässt die Bilder automatisch wechseln. 
 
+-document.addEventListener("DOMContentLoaded", () => { sorgt dafür, dass der Code erst ausgeführt wird wenn die Seite komplett geladen ist
+-const slides = document.querySelectorAll(".slide"); JS merkt sich alle Bilder (const wird für feste Werte verwendet)
+-const prevBtn = document.querySelector(".prev"); JS merkt sich den zurück button
+-const nextBtn = document.querySelector(".next"); JS merkt sich den weiter button
+-const dotsContainer = document.querySelector(".dots"); JS merkt sich den Dots Container
+-let index = 0; Variable, die speichert welches Bild gerade angezeigt wird (0=erstes Bild, 1=zweites Bild, ect.)  (Let wird für sich verändernde Elemente verwendet)
+-let interval; 
 
 Ich habe mit ChatGPT gelernt, wie man eine Slideshow in Javascript, CSS und HTML programmiert. ChatGPT hat mir einige Programme gezeigt, die ich dann noch anpassen musste, indem ich z.B meine eigenen Bildlinks eingefügt habe. Der Code hat aber lange nicht funktioniert, weil ich zuerst Probleme mit dem index im CSS hatte. Ursprünglich war das Problem, dass die Slides sich überlappten und das „aktive“ Bild nicht zuverlässig oben lag, weil alle Slides ähnliche z-index-Werte hatten. Ich habe das Problem korrigiert, indem ich in CSS die Klasse .active dem aktuellen Slide zuwies, sodass nur dieser opacity: 1 und z-index: 1 hat, während alle anderen Slides opacity: 0 und z-index: 0 behalten. Dadurch ist immer nur das aktuelle Bild sichtbar, und die Slideshow funktioniert korrekt.
 

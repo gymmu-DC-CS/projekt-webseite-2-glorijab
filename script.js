@@ -87,7 +87,7 @@ nextBtn.focus();
 
 function animateValue(id, end, duration) {
   let element = document.getElementById(id);
-  if (!element) return; // verhindert Crash
+  if (!element) return;
 
   let start = 0;
   let increment = end / (duration / 16);
