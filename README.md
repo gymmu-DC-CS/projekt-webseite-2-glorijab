@@ -98,12 +98,23 @@ Buttons:
 .prev { left: 10px; }: platziert den Button (horizontal gesehen) links vom Bild
 .next { right: 10px; }: platziert den Button (horizontal gesehen) rechts vom Bild
 
-Punkte (dots)
--position: absolute; 
--bottom: 15px;
--width: 100%;
--text-align: center;
+alle Punkte (dots)
+-position: absolute; sorgt dafür dass die Dots über dem Bild liegen
+-bottom: 15px; 15px vom unteren Rand entfernt
+-width: 100%; der Container benutzt die ganze Breite
+-text-align: center; sorgt dafür dass die Punkte mittig sind 
 
+einzelne Punkte
+-display: inline-block; sorgt dafür dass die Punkte nebeneinanderstehen
+-width: 10px; Grösse des Punkts
+-height: 10px; Grösse des Punkts
+-margin: 5px; alle Punkte haben 5px Abstand zueinander
+-background: rgba(255,255,255,0.5); macht die nicht aktiven Punkte leicht transparent
+-border-radius: 50%; 
+-cursor: pointer; macht es klickbar (dh. wenn man darüber geht wird gezeigt dass es klickbar ist) 
+
+aktiver Punkt
+-background: white; Der Punkt wird hell wenn er aktiv ist und zeigt welches Bild aktiv ist
 
 
 
