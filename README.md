@@ -125,7 +125,62 @@ JS macht die Seite interaktiv. Es erkennt Buttons und Dots, wechselt die Bilder 
 -const nextBtn = document.querySelector(".next"); JS merkt sich den weiter button
 -const dotsContainer = document.querySelector(".dots"); JS merkt sich den Dots Container
 -let index = 0; Variable, die speichert welches Bild gerade angezeigt wird (0=erstes Bild, 1=zweites Bild, ect.)  (Let wird für sich verändernde Elemente verwendet)
--let interval; 
+-let interval; Variable für automatische Wechseln
+-slides.forEach((_, i) => {für jedes Bild wird Punkt erstellt
+-const dot = document.createElement("button"); erstellt neuen Punkt
+-dot.classList.add("dot"); Punkt bekommt CSS Klasse
+-if (i === 0) dot.classList.add("active"); macht, dass der erste Punkt aktiv wird
+
+-dot.addEventListener("click", () => {
+  index = i;
+  updateSlides();
+  resetAutoplay();
+}); wenn man klickt geht man zu dem Bild, die Anzeige wird aktualisiert und Autoplay wird neu gestartet
+
+-dotsContainer.appendChild(dot); Der Punkt wird auf der Seite hinzugefügt
+
+-function updateSlides() {
+  slides.forEach(slide => slide.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active"); 
+} Diese Funktion zeigt ein Bild und einen Punkt an, alles andere wird nicht angezeigt
+
+Next Button:
+nextBtn.addEventListener("click", () => { 
+  index = (index + 1) % slides.length; index wird verändert, also nächstes Bild, startet dann wieder von vorne
+  updateSlides(); zeigt das Bild an
+  resetAutoplay(); startet den Timer für Autoplay neu
+});
+
+Zurück Button
+index = (index - 1 + slides.length) % slides.length; verhindert negative Zahlen, index verringert, also letztes Bild
+
+Autoplay (Automatik)
+-function startAutoplay() {
+  interval = setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateSlides();
+  }, 3000);
+} Alle 3 Sekunden geht es zum nächsten Bild und aktualisiert die Anzeige.
+
+function resetAutoplay() {
+  clearInterval(interval);
+  startAutoplay();
+} wenn man klickt, stoppt der alte Timer und ein neuer wird gestartet
+
+Tastatur
+-document.addEventListener("keydown", (e) => { erkennt Tastendruck
+-if (e.key === "ArrowRight") erkennt den rechten Pfeil auf der Tastatur, geht also zum nächsten Bild
+-if (e.key === "ArrowLeft") erkennt dne linken Pfeil auf der Tastatur, geht also zum letzten Bild
+
+Fokus
+nextBtn.focus(); aktiviert dne Button direkt, dh. man kann direkt mit der Tastatur arbeiten
+
+
+Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert alle Bilder und erstellt automatisch Navigationspunkte (dots). Über einen Index wird festgelegt, welches Bild aktuell aktiv ist. Beim Klicken auf Buttons oder Dots wird dieser Index verändert und die Anzeige aktualisiert. (index → sagt welches Bild, updateSlides() → zeigt es, Buttons/Dots → ändern index, Autoplay → ändert index automatisch) Zusätzlich sorgt ein Intervall für einen automatischen Bildwechsel und es gibt auch eine Steuerung über die Tastatur.
+
 
 Ich habe mit ChatGPT gelernt, wie man eine Slideshow in Javascript, CSS und HTML programmiert. ChatGPT hat mir einige Programme gezeigt, die ich dann noch anpassen musste, indem ich z.B meine eigenen Bildlinks eingefügt habe. Der Code hat aber lange nicht funktioniert, weil ich zuerst Probleme mit dem index im CSS hatte. Ursprünglich war das Problem, dass die Slides sich überlappten und das „aktive“ Bild nicht zuverlässig oben lag, weil alle Slides ähnliche z-index-Werte hatten. Ich habe das Problem korrigiert, indem ich in CSS die Klasse .active dem aktuellen Slide zuwies, sodass nur dieser opacity: 1 und z-index: 1 hat, während alle anderen Slides opacity: 0 und z-index: 0 behalten. Dadurch ist immer nur das aktuelle Bild sichtbar, und die Slideshow funktioniert korrekt.
 
