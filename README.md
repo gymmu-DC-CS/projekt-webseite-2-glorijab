@@ -5,16 +5,6 @@ Ich möchte Infos über seine Kindheit und Jugend, seine NBA Karriere, seine Rek
 Ich möchte meine Webseite möglichst vielseitig gestalten und verschiedene Wege finden, wie ich Informationen über Stephen Curry weitergeben kann (Zb in Form von Tabellen, Bildern, Spielerkarten etc.). Dabei bringe ich mir selbst bei wie Buttons und JavaScript Programmierung funktionieren. Ich möchte auch lernen, wie man eine Slideshow von Bildern macht und die beim Abschnitt ,,Kindheit und Jugend" einfügen. Ich möchte ausserdem eine Navigationsleiste am Anfang machen, bei der man beim Inhaltsverzeichnis auf die Themen klicken kann und dann direkt zu dem jeweiligen Abschnitt geleitet wird (ähnlich wie ein Menü oben). 
 
 
-Quellen: 
--Infos Steckbrief: https://en.wikipedia.org/wiki/Stephen_Curry
--Ideen gesucht für Interaktivität mit JavaScript: ChatGPT (Prompt: gib mir eine Idee für eine Website über einen Basketballspieler wo ich einen JavaScript Code brauchen kann)
--Lernen wie man eine Slideshow programmiert: ChatGPT (Prompt: Wie kann man eine slideshow mit Bildern machen?)
--Lernen wie man Navigationsleiste oben (Menü) programmiert: ChatGPT (Prompt: Wie macht man eine Navigatiosleiste)?
--Lernen wie man Bilder verschiebt: ChatGPT (Prompt: Wie verschiebe ich Bilder in HTML neben meinen Text?)
--Lernen wie man Slideshow programmiert: ChatGPT (Prompt: Wie programmiere ich eine Slideshow in HTML, CSS und JS?)
--Infos Stephen Curry Jugend und Kindheit: https://de.wikipedia.org/wiki/Stephen_Curry, https://davidsonwildcats.com/sports/mens-basketball/roster/stephen-curry/631, https://celeb-true.com/stephen-curry-american-professional-basketball-player-represents, 
-
-
 Lerntagebuch: 
 1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die Links von den einzelnen Abschnitten hinzugefügt und habe es zu einer geordneten Liste gemacht. <nav> bedeutet Navigation und ist der Bereich, in dem sich die Navigation der Website befindet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. Der CSS Code funktioniert so: 
 -background-color sorgt für den dunklen Hintergrund
@@ -46,7 +36,7 @@ Anordnung Handy
 } macht dass das Menü auf kleinen Bildschirmen nach links geht un dnicht mher zentriert wird
 
 
-2. Ich habe gelernt wie man Bilder neben dem Text einfügt. Man benutzt im HTML <div class="container">, die Liste und das Bild um das Bild neben der Liste zu platzieren. Damit der untere Text sich nicht nach oben verschiebt und das Bild mittig ist, sollte man <float> vermeiden. im CSS benutzt man:
+2. Ich habe von meinem Vater gelernt wie man Bilder neben dem Text einfügt. Man benutzt im HTML <div class="container">, die Liste und das Bild um das Bild neben der Liste zu platzieren. Damit der untere Text sich nicht nach oben verschiebt und das Bild mittig ist, sollte man <float> vermeiden. im CSS benutzt man:
  .container {
   display: flex;
   gap: 20px;
@@ -184,24 +174,22 @@ Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert a
 
  4. Ich habe mit ChatGPT gelernt, wie ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
 
- 5. Ich habe mit ChatGPT gelernt, dass ich media queries hinzufügen muss, um die Elemente der Webseite bei kleineren Bildschirmen (zb Smartphones) untereinander erscheinen zu lassen. 
-
-
- 6.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. ChatGPT hat mir dann einen Code gegeben, den ich zuerst anpassen musste. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich:
+5.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. ChatGPT hat mir dann einen Code gegeben, den ich zuerst anpassen musste. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich:
   .timeline::before {
   top: 50%;
   transform: translateY(-50%);
 }
 eingefügt habe. (noch verstehen)
 
-8. Ich hatte bei meiner Website im Allgemeinen das Problem, dass ich viel leeren Raum an der rechten Seite (neben meinen Texten) hatte. Das habe ich mithilfe von Tipps von ChatGPT gelöst, indem ich alle <br> Elemente entfernt habe, damit die Texte die volle Breite ausnutzen, Flexbox für den Steckbrief genutzt habe, die Bilgrössen (max-width + flex-shrink) angepasst habe, Media Queries und flex-wrap hinzugefügt habe (damit die Texte und Bilder auf kleinen Bildschirmen untereinander angezeigt werden) und overflow-x hidden auf body gesetzt habe, um horizontalen Scroll zu verhindern (sodass der Inhalt nicht über die Grenze hinausgeht)
+6. Ich hatte bei meiner Website im Allgemeinen das Problem, dass ich viel leeren Raum an der rechten Seite (neben meinen Texten) hatte. Das habe ich mithilfe von Tipps von ChatGPT gelöst, indem ich alle <br> Elemente entfernt habe, damit die Texte die volle Breite ausnutzen, Flexbox für den Steckbrief genutzt habe, die Bilgrössen (max-width + flex-shrink) angepasst habe, Media Queries und flex-wrap hinzugefügt habe (damit die Texte und Bilder auf kleinen Bildschirmen untereinander angezeigt werden) und overflow-x hidden auf body gesetzt habe, um horizontalen Scroll zu verhindern (sodass der Inhalt nicht über die Grenze hinausgeht)
 
 
-9. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt.  
+7. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt. Der JS Teil der Karte funktioniert so: 
 
-10. Ich habe mit ChatGPT gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. Mein erster Fehler war, dass der Text zu weit rechts platziert wurde und ich einen riesigen Abstand zwischen Karte und Text hatte. Das habe ich gelöst, indem ich den Abschnitt, der die Karte zentriert hat (margin: 40px auto;) zu margin: 0 geändert habe. 
 
-11. Ich habe mit ChatGPT gelernt wie man eine Tabelle mit CSS ansprechender gestaltet. Dafür habe ich zuerst die Tabelle im HTML gemacht und der Tabelle die Klasse "records" gegeben, anschliessend habe ich im CSS die Tabelle gestaltet. 
+8. Ich habe mit ChatGPT gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. Mein erster Fehler war, dass der Text zu weit rechts platziert wurde und ich einen riesigen Abstand zwischen Karte und Text hatte. Das habe ich gelöst, indem ich den Abschnitt, der die Karte zentriert hat (margin: 40px auto;) zu margin: 0 geändert habe. 
+
+9. Ich habe mit ChatGPT gelernt wie man eine Tabelle mit CSS ansprechender gestaltet. Dafür habe ich zuerst die Tabelle im HTML gemacht und der Tabelle die Klasse "records" gegeben, anschliessend habe ich im CSS die Tabelle gestaltet. 
 Allgemeines Design: 
 .records {
   width: 100%; die Tabelle nimmt die ganze Breite 
@@ -221,3 +209,35 @@ Hover Effekt
 .records tbody tr:hover {
   background: #da8025;
 sorgt daür dass Zeilen hervorgehoben werden wenn man mit der Maus drüberfährt
+
+
+
+
+
+
+
+
+
+function animateValue(id, end, duration) {
+  let element = document.getElementById(id);
+  if (!element) return;
+
+  let start = 0;
+  let increment = end / (duration / 16);
+
+  let timer = setInterval(() => {
+    start += increment;
+    if (start >= end) {
+      element.textContent = end;
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(start);
+    }
+  }, 16);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  animateValue("points", 28, 800);
+  animateValue("assists", 6, 800);
+  animateValue("threes", 5, 800);
+});

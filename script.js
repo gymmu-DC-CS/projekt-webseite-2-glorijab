@@ -83,8 +83,6 @@ nextBtn.focus();
 
 
 
-
-
 function animateValue(id, end, duration) {
   let element = document.getElementById(id);
   if (!element) return;
@@ -108,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animateValue("assists", 6, 800);
   animateValue("threes", 5, 800);
 });
+
 
 
 
