@@ -178,50 +178,46 @@ Tastatur
 Fokus
 nextBtn.focus(); aktiviert dne Button direkt, dh. man kann direkt mit der Tastatur arbeiten
 
-
-Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert alle Bilder und erstellt automatisch Navigationspunkte (dots). Über einen Index wird festgelegt, welches Bild aktuell aktiv ist. Beim Klicken auf Buttons oder Dots wird dieser Index verändert und die Anzeige aktualisiert. (index → sagt welches Bild, updateSlides() → zeigt es, Buttons/Dots → ändern index, Autoplay → ändert index automatisch) Zusätzlich sorgt ein Intervall für einen automatischen Bildwechsel und es gibt auch eine Steuerung über die Tastatur.
-
-
-Ich habe mit ChatGPT gelernt, wie man eine Slideshow in Javascript, CSS und HTML programmiert. ChatGPT hat mir einige Programme gezeigt, die ich dann noch anpassen musste, indem ich z.B meine eigenen Bildlinks eingefügt habe. Der Code hat aber lange nicht funktioniert, weil ich zuerst Probleme mit dem index im CSS hatte. Ursprünglich war das Problem, dass die Slides sich überlappten und das „aktive“ Bild nicht zuverlässig oben lag, weil alle Slides ähnliche z-index-Werte hatten. Ich habe das Problem korrigiert, indem ich in CSS die Klasse .active dem aktuellen Slide zuwies, sodass nur dieser opacity: 1 und z-index: 1 hat, während alle anderen Slides opacity: 0 und z-index: 0 behalten. Dadurch ist immer nur das aktuelle Bild sichtbar, und die Slideshow funktioniert korrekt.
-
-Nachdem ich dieses Problem korrigiert habe, funktionierte der Code immernoch weil ich einen Code programmmiert habe, der auf Mausklick reagiert (z.B mit nextBtn.addEventListener("click")), also hat es lange Zeit nicht funktioniert, weil ich keine Maus hatte ("click" reagiert nur auf Maus). Um das Problem zu lösen, habe ich mit "keydown" eine Tastatursteuerung eingebaut und somit das "click" ergänzt: 
-document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") { index = (index + 1) % slides.length; updateSlides(); } if (e.key === "ArrowLeft") { index = (index - 1 + slides.length) % slides.length; updateSlides(); } });
-
- Ausserdem hatte ich am Anfang die Navigationspunkte in meinem HTML Code mit "span" erstellt z.B (const dot = document.createElement("span");). Das war ein Problem, weil "span" kein interaktives Element ist und nicht auf Tastatur reagiert. Also habe ich "span" durch "button" ersetzt: 
- const dot = document.createElement("button");
-
- Damit es funktioniert, habe ich zusätzlich noch eine Beschreibung hinzugefügt: 
- dot.setAttribute("aria-label", + (i + 1));
-
- Ein weiteres Problem war, dass ich <script src="script.js" defer></script> gar nicht in meinen HTML hatte, weswegen mein JS Code gar nicht reagiert hat. 
+Zusammenfassung:
+Der Carousel besteht im HTML aus einem Container, in dem mehrere Bilder als einzelne Elemente gespeichert sind. Diese Bilder haben alle die gleiche Klasse und liegen innerhalb eines sogenannten Slides-Containers. Zusätzlich gibt es Buttons für die Navigation sowie einen Container für die Punkte (Dots). Im CSS wird der Carousel so aufgebaut, dass der äußere Container mit position: relative als Bezugspunkt dient. Die einzelnen Bilder werden mit position: absolute exakt übereinandergelegt, sodass immer alle am gleichen Ort sind. Damit aber nur ein Bild sichtbar ist, wird mit opacity gearbeitet: Standardmäßig sind alle Bilder unsichtbar und nur das Bild mit der Klasse active wird sichtbar gemacht. Der Container hat außerdem overflow: hidden, damit keine Inhalte außerhalb des Bereichs sichtbar sind. Die Navigationsbuttons werden mit position: absolute, top: 50% und transform: translateY(-50%) vertikal zentriert und links bzw. rechts positioniert.Die Dots werden ebenfalls absolut positioniert und unten im Container zentriert angezeigt. Insgesamt sorgt CSS also dafür, dass alle Elemente richtig angeordnet sind und nur das aktive Bild sichtbar ist.“
+Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert alle Bilder und erstellt automatisch Navigationspunkte (dots). Über einen Index wird festgelegt, welches Bild aktuell aktiv ist. Beim Klicken auf Buttons oder Dots wird dieser Index verändert und die Anzeige aktualisiert. (index → sagt welches Bild, updateSlides() → zeigt es, Buttons/Dots → ändern index, Autoplay → ändert index automatisch) Zusätzlich sorgt ein Intervall für einen automatischen Bildwechsel und es gibt auch eine Steuerung über die Tastatur. Ein Problem in meiner Programmierung war, dass ich <script src="script.js" defer></script> gar nicht in meinen HTML hatte, weswegen mein JS Code gar nicht reagiert hat. 
 
  4. Ich habe mit ChatGPT gelernt, wie ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
 
  5. Ich habe mit ChatGPT gelernt, dass ich media queries hinzufügen muss, um die Elemente der Webseite bei kleineren Bildschirmen (zb Smartphones) untereinander erscheinen zu lassen. 
 
- 6. Ich habe mit ChatGPT gelernt, dass ich die Navigation (das Menü oben) mit flex-warp anpassen muss, damit es bei kleineren Bildschirmen untereinander angezeigt wird.
 
- 7.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich .timeline::before {
+ 6.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. ChatGPT hat mir dann einen Code gegeben, den ich zuerst anpassen musste. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich:
+  .timeline::before {
   top: 50%;
   transform: translateY(-50%);
 }
 eingefügt habe. (noch verstehen)
 
-Commit: 
- Layout und Steckbrief optimiert
+8. Ich hatte bei meiner Website im Allgemeinen das Problem, dass ich viel leeren Raum an der rechten Seite (neben meinen Texten) hatte. Das habe ich mithilfe von Tipps von ChatGPT gelöst, indem ich alle <br> Elemente entfernt habe, damit die Texte die volle Breite ausnutzen, Flexbox für den Steckbrief genutzt habe, die Bilgrössen (max-width + flex-shrink) angepasst habe, Media Queries und flex-wrap hinzugefügt habe (damit die Texte und Bilder auf kleinen Bildschirmen untereinander angezeigt werden) und overflow-x hidden auf body gesetzt habe, um horizontalen Scroll zu verhindern (sodass der Inhalt nicht über die Grenze hinausgeht)
 
-- Flexbox für den Steckbrief-Container eingefügt, um Bild und Liste nebeneinander anzuordnen
-- Container-Styles angepasst: width auf 100%, max-width und margin:auto entfernt, flex-wrap hinzugefügt
-- Bildgrößen angepasst (max-width + flex-shrink) für bessere Darstellung
-- Listeneinträge umbrechbar gemacht (word-break), um Überlauf zu verhindern
-- Media Queries hinzugefügt, damit Steckbrief auf kleinen Bildschirmen untereinander angezeigt wird
-- Navigation angepasst (flex-wrap) für responsive Menü-Darstellung
-- Alle <br> aus der Liste entfernt, um Layoutprobleme und leeren Raum rechts zu beseitigen
-- Overflow-x: hidden auf Body gesetzt, um horizontalen Scroll zu verhindern
 
-8. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt. 
+9. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt.  
 
-9. Ich habe gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. Mein erster Fehler war, dass der Text zu weit rechts platziert wurde und ich einen riesigen Abstand zwischen Karte und Text hatte. Das habe ich gelöst, indem ich den Abschnitt, der die Karte zentriert hat (margin: 40px auto;) zu margin: 0 geändert habe. 
+10. Ich habe mit ChatGPT gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. Mein erster Fehler war, dass der Text zu weit rechts platziert wurde und ich einen riesigen Abstand zwischen Karte und Text hatte. Das habe ich gelöst, indem ich den Abschnitt, der die Karte zentriert hat (margin: 40px auto;) zu margin: 0 geändert habe. 
 
-10. Ich habe gelernt wie man eine Tabelle mit CSS ansprechender gestaltet. 
- 
+11. Ich habe mit ChatGPT gelernt wie man eine Tabelle mit CSS ansprechender gestaltet. Dafür habe ich zuerst die Tabelle im HTML gemacht und der Tabelle die Klasse "records" gegeben, anschliessend habe ich im CSS die Tabelle gestaltet. 
+Allgemeines Design: 
+.records {
+  width: 100%; die Tabelle nimmt die ganze Breite 
+  border-collapse: collapse; der Abstand zwischen den Zeilen wird entfernt
+  font-family: Arial, sans-serif; Schriftart
+  background: white; weisser Hintergrund 
+  border-radius: 10px; die Ecken werden abgerundet
+  overflow: hidden; verhindert dass der Inhalt der Tabelle über die Ecken rausragt
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); leichter Schatten
+}
+Abwechselnde Zeilenfarbe
+.records tbody tr:nth-child(odd) {
+  background: #f6f8fa;
+} jede ungerade Zeile bekommt die Farbe grau
+
+Hover Effekt
+.records tbody tr:hover {
+  background: #da8025;
+sorgt daür dass Zeilen hervorgehoben werden wenn man mit der Maus drüberfährt
