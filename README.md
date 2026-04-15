@@ -174,18 +174,17 @@ Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert a
 
  4. Ich habe mit ChatGPT gelernt, wie ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
 
-5.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. ChatGPT hat mir dann einen Code gegeben, den ich zuerst anpassen musste. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich:
+5.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. ChatGPT hat mir dann einen Code gegeben, den ich zuerst anpassen musste. Ich habe die Timeline so angepasst, dass ich meine eigenen Bilder hatte, die Jahre eingefügt habe, die Grösse der Bilder angepasst habe, die Grösse der Timeline und die Position der Timeline an meine Website angepasst habe. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich:
   .timeline::before {
   top: 50%;
   transform: translateY(-50%);
 }
-eingefügt habe. (noch verstehen)
+eingefügt habe. 
 
 6. Ich hatte bei meiner Website im Allgemeinen das Problem, dass ich viel leeren Raum an der rechten Seite (neben meinen Texten) hatte. Das habe ich mithilfe von Tipps von ChatGPT gelöst, indem ich alle <br> Elemente entfernt habe, damit die Texte die volle Breite ausnutzen, Flexbox für den Steckbrief genutzt habe, die Bilgrössen (max-width + flex-shrink) angepasst habe, Media Queries und flex-wrap hinzugefügt habe (damit die Texte und Bilder auf kleinen Bildschirmen untereinander angezeigt werden) und overflow-x hidden auf body gesetzt habe, um horizontalen Scroll zu verhindern (sodass der Inhalt nicht über die Grenze hinausgeht)
 
 
-7. Ich habe gelernt, wie man eine interaktive Player Card erstellt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt. Der JS Teil der Karte funktioniert so: 
-
+7. Ich habe mit ChatGPT gelernt, wie man eine Player Card erstellt, die die aktuellen Statistiken von Stephen Curry zeigt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt. ChatGPT hat mir den Code gegeben, den ich dann auf mein Projekt angepasst habe (passendes Bild, passende Zahlen, passende Grösse und Position der Karte, siehe Punkt 8.)
 
 8. Ich habe mit ChatGPT gelernt, wie man die Spieler Karte verschiebt und daneben einen Text platziert. Mein erster Fehler war, dass der Text zu weit rechts platziert wurde und ich einen riesigen Abstand zwischen Karte und Text hatte. Das habe ich gelöst, indem ich den Abschnitt, der die Karte zentriert hat (margin: 40px auto;) zu margin: 0 geändert habe. 
 
@@ -218,26 +217,3 @@ sorgt daür dass Zeilen hervorgehoben werden wenn man mit der Maus drüberfährt
 
 
 
-function animateValue(id, end, duration) {
-  let element = document.getElementById(id);
-  if (!element) return;
-
-  let start = 0;
-  let increment = end / (duration / 16);
-
-  let timer = setInterval(() => {
-    start += increment;
-    if (start >= end) {
-      element.textContent = end;
-      clearInterval(timer);
-    } else {
-      element.textContent = Math.floor(start);
-    }
-  }, 16);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  animateValue("points", 28, 800);
-  animateValue("assists", 6, 800);
-  animateValue("threes", 5, 800);
-});
