@@ -50,7 +50,7 @@ nav a:hover {
 
 
 
-/* STECKBRIEF CONTAINER */
+
 #steckbrief {
   margin: 20px;
   font-size: 28px;  
@@ -178,9 +178,7 @@ nav a:hover {
   }
 }
 
-/* =========================
-   TIMELINE
-========================= */
+
 
 .timeline {
   position: relative;
@@ -208,7 +206,7 @@ nav a:hover {
   text-align: center;
 }
 
-/* Bilder */
+
 .event img {
   width: 200px;
   height: 250px;
@@ -217,7 +215,7 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-/* Punkte */
+
 .event::after {
   content: "";
   position: absolute;
@@ -230,13 +228,13 @@ nav a:hover {
   transform: translate(-50%, -50%);
 }
 
-/* Positionen */
+
 .event:nth-child(1) { left: 10%; }
 .event:nth-child(2) { left: 35%; }
 .event:nth-child(3) { left: 60%; }
 .event:nth-child(4) { left: 85%; }
 
-/* Hover Effekt */
+
 .event img:hover {
   transform: scale(1.1);
   transition: 0.3s;
@@ -244,9 +242,7 @@ nav a:hover {
 }
 
 
-/* =========================
-   NBA Karte
-========================= */
+
 
 .nba-card {
   width: 320px;
@@ -320,9 +316,7 @@ nav a:hover {
 
 
 
-/* =========================
-   KARTE + TEXT LAYOUT
-========================= */
+
 
 .stats-section {
   display: flex;
@@ -332,7 +326,7 @@ nav a:hover {
   margin: 20px;
 }
 
-/* Text rechts */
+
 .stats-text {
   min-width: 250px;
   color: #ccc;
