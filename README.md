@@ -6,7 +6,7 @@ Ich möchte meine Webseite möglichst vielseitig gestalten und verschiedene Wege
 
 
 Lerntagebuch: 
-1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt.Ich habe ChatGPT gefragt wie man es macht und habe dann die Links von den einzelnen Abschnitten hinzugefügt und habe es zu einer geordneten Liste gemacht. <nav> bedeutet Navigation und ist der Bereich, in dem sich die Navigation der Website befindet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. Der CSS Code funktioniert so: 
+1. Ich habe gelernt wie man <nav> benutzt und damit eine Navigationsleiste macht. Dies habe ich mit KI gelernt. Ich habe ChatGPT gefragt wie man es macht und habe dann die Links von den einzelnen Abschnitten hinzugefügt und habe es zu einer geordneten Liste gemacht. <nav> bedeutet Navigation und ist der Bereich, in dem sich die Navigation der Website befindet. Danach hat es noch nicht funktioniert, also habe ich ChatGPT gefragt was der Fehler in meinem Code ist und habe herausgefunden, dass ich die id's bei einigen Untertiteln vergessen habe und dass ich im html head <link rel="stylesheet" href="style.css"> einfügen muss, damit der CSS Code in der Website übernommen wird. Der CSS Code funktioniert so: 
 -background-color sorgt für den dunklen Hintergrund
 -padding sorgt für den Abstand innen (sodass es nicht gequetscht aussieht) 
 -position: sticky sorgt dafü dass das Menü oben bleibt beim Scrollen -top sorgt dafür dass das Menü ganz oben ist
@@ -209,7 +209,7 @@ Abwechselnde Zeilenfarbe
 Hover Effekt
 .records tbody tr:hover {
   background: #da8025;
-sorgt daür, dass Zeilen hervorgehoben werden. wenn man mit der Maus drüberfährt.
+sorgt daür, dass Zeilen hervorgehoben werden, wenn man mit der Maus drüberfährt.
 
 
 
