@@ -2,7 +2,7 @@ Planung Website
 
 Ziel: Website über berühmten Basketballspieler Stephen Curry
 Ich möchte Infos über seine Kindheit und Jugend, seine NBA Karriere, seine Rekorde, die Höhepunkte seiner Karriere, seine momentane Leistungen und meine persönlichen Erfahrungen und Bezüge in die Website miteinbeziehen. 
-Ich möchte meine Webseite möglichst vielseitig gestalten und verschiedene Wege finden, wie ich Informationen über Stephen Curry weitergeben kann (Zb in Form von Tabellen, Bildern, Spielerkarten etc.). Dabei bringe ich mir selbst bei wie Buttons und JavaScript Programmierung funktionieren. Ich möchte auch lernen, wie man eine Slideshow von Bildern macht und die beim Abschnitt ,,Kindheit und Jugend" einfügen. Ich möchte ausserdem eine Navigationsleiste am Anfang machen, bei der man beim Inhaltsverzeichnis auf die Themen klicken kann und dann direkt zu dem jeweiligen Abschnitt geleitet wird (ähnlich wie ein Menü oben). 
+Ich möchte meine Webseite möglichst vielseitig gestalten und verschiedene Wege finden, wie ich Informationen über Stephen Curry weitergeben kann (z.B in Form von Tabellen, Bildern, Spielerkarten etc.). Dabei bringe ich mir selbst bei, wie Buttons und JavaScript Programmierung funktionieren. Ich möchte auch lernen, wie man eine Slideshow von Bildern macht und die beim Abschnitt ,,Kindheit und Jugend" einfügen. Ich möchte ausserdem eine Navigationsleiste am Anfang machen, bei der man beim Inhaltsverzeichnis auf die Themen klicken kann und dann direkt zu dem jeweiligen Abschnitt geleitet wird (ähnlich wie ein Menü oben). 
 
 
 Lerntagebuch: 
@@ -26,14 +26,14 @@ Abschnitt nav a:
 Hover Effekt (Nav a :hover):
  nav a:hover {
   color: orange;
-} macht dass der Text orange wird wen man mit der Maus drüberfährt
+} macht, dass der Text orange wird wenn man mit der Maus drüberfährt
 
 Anordnung Handy
 @media (max-width: 768px) {
   nav ol {
     justify-content: flex-start;
   }
-} macht dass das Menü auf kleinen Bildschirmen nach links geht un dnicht mher zentriert wird
+} macht dass das Menü auf kleinen Bildschirmen nach links geht und nicht mehr zentriert wird
 
 
 2. Ich habe von meinem Vater gelernt wie man Bilder neben dem Text einfügt. Man benutzt im HTML <div class="container">, die Liste und das Bild um das Bild neben der Liste zu platzieren. Damit der untere Text sich nicht nach oben verschiebt und das Bild mittig ist, sollte man <float> vermeiden. im CSS benutzt man:
@@ -52,6 +52,8 @@ Der Container ist ein CSS Selektor und wählt alle Elemente mit class=container 
 
 
 3. Ich habe mit ChatGPT gelernt, wie man mit carousel (Slideshow) arbeitet.
+Hinweis: Ich habe diesen Codeabschnitt hier ausführlich erklärt, um ihn selbst besser zu verstehen, da dieser Abschnitt für mich ziemlich anspruchsvoll zu verstehen war und ich lange an ihm gearbeitet habe. 
+
 HTML:
 -Mit <div class="carousel"> macht man alle Bilder,Buttons, Punkte, etc. die man in der Slideshow haben möchte, in einen Hauptcontainer.
 -<div class="slides"> ist der Bereich für die Bilder. 
@@ -60,6 +62,7 @@ HTML:
 -<button class="nav prev">‹</button> und <button class="nav next">›</button> sind die beiden Buttons, mit denen man in beide Richtungen wechseln kann. 
 -nav prev und nav next ist hier nicht <nav> (Navigation), sondern nur ein Klassenname. 
 -<div class="dots"></div> sind die Punkte, die beim jeweiligen Bild zu sehen sind, dass aktiv ist. 
+
 CSS:
 carousel container: 
 -position: relative; die Position des Carousels muss relativ sein, da sich die Buttons auf diese Position beziehen. Wenn die position absolute wäre würden sich die Buttons auf die ganze Seite beziehen und irgendwo auf der Website landen.
@@ -166,13 +169,13 @@ Tastatur
 -if (e.key === "ArrowLeft") erkennt dne linken Pfeil auf der Tastatur, geht also zum letzten Bild
 
 Fokus
-nextBtn.focus(); aktiviert dne Button direkt, dh. man kann direkt mit der Tastatur arbeiten
+nextBtn.focus(); aktiviert den Button direkt, dh. man kann direkt mit der Tastatur arbeiten
 
 Zusammenfassung:
 Der Carousel besteht im HTML aus einem Container, in dem mehrere Bilder als einzelne Elemente gespeichert sind. Diese Bilder haben alle die gleiche Klasse und liegen innerhalb eines sogenannten Slides-Containers. Zusätzlich gibt es Buttons für die Navigation sowie einen Container für die Punkte (Dots). Im CSS wird der Carousel so aufgebaut, dass der äußere Container mit position: relative als Bezugspunkt dient. Die einzelnen Bilder werden mit position: absolute exakt übereinandergelegt, sodass immer alle am gleichen Ort sind. Damit aber nur ein Bild sichtbar ist, wird mit opacity gearbeitet: Standardmäßig sind alle Bilder unsichtbar und nur das Bild mit der Klasse active wird sichtbar gemacht. Der Container hat außerdem overflow: hidden, damit keine Inhalte außerhalb des Bereichs sichtbar sind. Die Navigationsbuttons werden mit position: absolute, top: 50% und transform: translateY(-50%) vertikal zentriert und links bzw. rechts positioniert.Die Dots werden ebenfalls absolut positioniert und unten im Container zentriert angezeigt. Insgesamt sorgt CSS also dafür, dass alle Elemente richtig angeordnet sind und nur das aktive Bild sichtbar ist.“
 Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert alle Bilder und erstellt automatisch Navigationspunkte (dots). Über einen Index wird festgelegt, welches Bild aktuell aktiv ist. Beim Klicken auf Buttons oder Dots wird dieser Index verändert und die Anzeige aktualisiert. (index → sagt welches Bild, updateSlides() → zeigt es, Buttons/Dots → ändern index, Autoplay → ändert index automatisch) Zusätzlich sorgt ein Intervall für einen automatischen Bildwechsel und es gibt auch eine Steuerung über die Tastatur. Ein Problem in meiner Programmierung war, dass ich <script src="script.js" defer></script> gar nicht in meinen HTML hatte, weswegen mein JS Code gar nicht reagiert hat. 
 
- 4. Ich habe mit ChatGPT gelernt, wie ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS margin: auto durch margin: 20px 0;. Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. 
+ 4. Ich habe mit ChatGPT gelernt, wie ich die Slideshow nach links verschiebe: Um die Slideshow nach links zu verschieben (sodass sie direkt unter dem Text steht) ersetzt man im CSS "margin: auto" durch "margin: 20px 0;". Das "auto" sorgt dafür, dass die Slideshow zentriert platziert wird und muss daher ersetzt werden. Schlussendlich habe ich mich aus stilistischen Gründen entschieden, diese Entscheidung rückgängig zu machen und die Slideshow wieder zu zentrieren. 
 
 5.  Ich habe mit ChatGPT gelernt, wie man eine Timeline erstellt. ChatGPT hat mir dann einen Code gegeben, den ich zuerst anpassen musste. Ich habe die Timeline so angepasst, dass ich meine eigenen Bilder hatte, die Jahre eingefügt habe, die Grösse der Bilder angepasst habe, die Grösse der Timeline und die Position der Timeline an meine Website angepasst habe. Dabei hatte ich zuerst das Problem, dass die Timeline mit meinen Überschrfiten überlappte. Das ist passiert, weil ich bei den timeline events top: -100px eingestellt habe und die Bilder so aus dem normalen Layout gezogen wurden. Das Problem habe ich gelöst, indem ich die Bilder zentriert habe (mit top: 50% und transform: translate(-50%, -50%)). Ein weiterer Grund wieso die Timeline mit den Überschriften überlappte, war, dass die ich die position auf absolute eingestellt habe. Die Timeline hat somit keinen PLatz eingenommen und wurde quasi ignoriert und überlappte deswegen mit meinen Überschriften. Das habe ich gelöst, indem ich der Timeline eine Höhe gegeben habe und die position auf relative eingestellt habe. Danach hatte ich das Problem, dass die Linie oberhalb der Bilder und nicht in der Mitte platziert wurde. Das Probleme habe ich beseitigt, indem ich:
   .timeline::before {
@@ -181,8 +184,7 @@ Das JavaScript steuert den gesamten Carousel (bzw die Slideshow). Es speichert a
 }
 eingefügt habe. 
 
-6. Ich hatte bei meiner Website im Allgemeinen das Problem, dass ich viel leeren Raum an der rechten Seite (neben meinen Texten) hatte. Das habe ich mithilfe von Tipps von ChatGPT gelöst, indem ich alle <br> Elemente entfernt habe, damit die Texte die volle Breite ausnutzen, Flexbox für den Steckbrief genutzt habe, die Bilgrössen (max-width + flex-shrink) angepasst habe, Media Queries und flex-wrap hinzugefügt habe (damit die Texte und Bilder auf kleinen Bildschirmen untereinander angezeigt werden) und overflow-x hidden auf body gesetzt habe, um horizontalen Scroll zu verhindern (sodass der Inhalt nicht über die Grenze hinausgeht)
-
+6. Ich hatte bei meiner Website im Allgemeinen das Problem, dass ich viel leeren Raum an der rechten Seite (neben meinen Texten) hatte. Das habe ich mithilfe von Tipps von ChatGPT gelöst, indem ich alle <br> Elemente entfernt habe, damit die Texte die volle Breite ausnutzen, Flexbox für den Steckbrief genutzt habe, die Bilgrössen (max-width + flex-shrink) angepasst habe, Media Queries und flex-wrap hinzugefügt habe (damit die Texte und Bilder auf kleinen Bildschirmen untereinander angezeigt werden) und overflow-x hidden auf body gesetzt habe, um horizontalen Scroll zu verhindern (sodass der Inhalt nicht über die Grenze hinausgeht).
 
 7. Ich habe mit ChatGPT gelernt, wie man eine Player Card erstellt, die die aktuellen Statistiken von Stephen Curry zeigt. Beim ersten Versuch hat der Code meine ganze Website komplett durcheinandergebracht, weil ich <script src="script.js"></script> an der falschen Stelle im HTML hatte. Das habe ich gelöst in dem ich diesen Abschnitt zwischen </body> und </html> gemacht habe. Ausserdem hatten meine Klassen im CSS die gleichen Namen wie andere Elemente die ich schon hatte, weswegen ich die Klassennamen spezifischer machen musste. Ein weiterer Fehler war, dass mein JS auf id's zugreifen wollte, aber ich keine id's im HTML hatte. Also habe ich im HTML id's zu den Statistiken hinzugefügt. ChatGPT hat mir den Code gegeben, den ich dann auf mein Projekt angepasst habe (passendes Bild, passende Zahlen, passende Grösse und Position der Karte, siehe Punkt 8.)
 
@@ -207,7 +209,7 @@ Abwechselnde Zeilenfarbe
 Hover Effekt
 .records tbody tr:hover {
   background: #da8025;
-sorgt daür dass Zeilen hervorgehoben werden wenn man mit der Maus drüberfährt
+sorgt daür, dass Zeilen hervorgehoben werden. wenn man mit der Maus drüberfährt.
 
 
 
